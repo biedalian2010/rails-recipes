@@ -12,6 +12,9 @@ class Event < ApplicationRecord
 
  belongs_to :category, :optional => true
 
+ has_many :tickets, :dependent => :destroy
+
+
  def to_param
    self.friendly_id
  end
