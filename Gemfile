@@ -47,6 +47,8 @@ gem 'jbuilder', '~> 2.5'
 
   gem 'bootstrap-datepicker-rails'
 
+  gem 'ckeditor'
+
 group :development, :test do
   gem 'rspec-rails'
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
