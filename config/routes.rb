@@ -11,6 +11,7 @@ Rails.application.routes.draw do
         patch "steps/3/update" => "registrations#step3_update", :as => :update_step3
       end
   end
+end
 
   resource :user
 
