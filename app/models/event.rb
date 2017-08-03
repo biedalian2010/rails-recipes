@@ -1,5 +1,9 @@
 class Event < ApplicationRecord
 
+  scope :only_public, -> { where( :status => "public" ) }
+  scope :only_available, -> { where( :status => ["public", "private"] ) }
+
+
    include RankedModel
    ranks :row_order
 
