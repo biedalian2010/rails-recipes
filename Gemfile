@@ -57,6 +57,10 @@ gem 'jbuilder', '~> 2.5'
 
   gem 'ransack'
 
+  gem 'carrierwave'
+
+  gem "mini_magick"
+
 group :development, :test do
   gem 'rspec-rails'
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
