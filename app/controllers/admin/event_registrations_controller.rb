@@ -2,6 +2,7 @@
 require 'csv'
 class Admin::EventRegistrationsController < ApplicationController
    before_action :find_event
+   before_action :require_editor!
 
    def index
      @q = @event.registrations.ransack(params[:q])
@@ -39,7 +40,6 @@ class Admin::EventRegistrationsController < ApplicationController
      respond_to do |format|
        format.html
        format.csv {
-         format.xlsx
          @registrations = @registrations.reorder("id ASC")
          csv_string = CSV.generate do |csv|
            csv << ["报名ID", "票种", "姓名", "状态", "Email", "报名时间"]
@@ -49,6 +49,7 @@ class Admin::EventRegistrationsController < ApplicationController
          end
          send_data csv_string, :filename => "#{@event.friendly_id}-registrations-#{Time.now.to_s(:number)}.csv"
        }
+       format.xlsx
      end
 
    end

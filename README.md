@@ -21,4 +21,4 @@ Things you may want to cover:
 
 * Deployment instructions
 
-* ...
+* 23-5 用户权限控管补充: pundit 和 cancancan
