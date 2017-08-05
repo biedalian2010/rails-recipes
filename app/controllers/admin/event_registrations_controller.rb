@@ -39,6 +39,7 @@ class Admin::EventRegistrationsController < ApplicationController
      respond_to do |format|
        format.html
        format.csv {
+         format.xlsx
          @registrations = @registrations.reorder("id ASC")
          csv_string = CSV.generate do |csv|
            csv << ["报名ID", "票种", "姓名", "状态", "Email", "报名时间"]
