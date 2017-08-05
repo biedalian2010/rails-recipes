@@ -59,7 +59,9 @@ gem 'jbuilder', '~> 2.5'
 
   gem 'carrierwave'
 
-  gem "mini_magick"
+  gem 'mini_magick'
+
+  gem 'paper_trail'
 
 group :development, :test do
   gem 'rspec-rails'
