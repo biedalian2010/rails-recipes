@@ -2,6 +2,7 @@
 require 'csv'
 class Admin::EventRegistrationsController < ApplicationController
    before_action :find_event
+   before_action :require_editor!
 
    def index
      @q = @event.registrations.ransack(params[:q])
